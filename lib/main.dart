@@ -92,11 +92,9 @@ class Data extends ChangeNotifier{
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/forms_examples/forms1.dart';
-
 
 main(){
-  runApp(const MyCustomForm());
+  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -107,7 +105,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blueGrey
       ),
-      home: MyCustomForm(),
+      home: MyApp(),
     );
   }
 }
