@@ -68,6 +68,7 @@ showAlertDialog(BuildContext context){
   );
 }
 */
+/*
 import 'package:flutter/material.dart';
 import 'package:my_project/main.dart';
 
@@ -136,4 +137,79 @@ class TextFieldAlertDialog extends StatelessWidget {
       ),
     );
   }
+}
+*/
+import 'package:flutter/material.dart';
+void main() {
+  runApp(new MaterialApp(home: new MyApp()));
+}
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Select Option AlertDialog"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              onPressed: () async {
+                final Product? prodName = await _asyncSimpleDialog(context);
+                print("Selected course is $prodName");
+              },
+              child: const Text(
+                "Show Alert",
+                style: TextStyle(fontSize: 20.0),),
+              padding: EdgeInsets.fromLTRB(30.0,10.0,30.0,10.0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0)
+              ),
+              color: Colors.blue,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+enum Product { Apple, Samsung, Oppo, Redmi }
+Future<Product?> _asyncSimpleDialog(BuildContext context) async {
+  return await showDialog<Product>(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: const Text('Select Course '),
+          children: <Widget>[
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, Product.Apple);
+              },
+              child: const Text('Flutter'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, Product.Samsung);
+              },
+              child: const Text('Android'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, Product.Oppo);
+              },
+              child: const Text('Java'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, Product.Redmi);
+              },
+              child: const Text('Python'),
+            ),
+          ],
+        );
+      });
 }
