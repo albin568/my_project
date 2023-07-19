@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'navbar.dart';
 import 'package:my_project/main.dart';
+
 class AccountScreen extends StatelessWidget {
   static const String id = 'account_screen';
 

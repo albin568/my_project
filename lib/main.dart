@@ -92,10 +92,11 @@ class Data extends ChangeNotifier{
   }
 }*/
 import 'package:flutter/material.dart';
+import 'package:my_project/forms_examples/forms1.dart';
 
 
 main(){
-  runApp(const MyApp());
+  runApp(const MyCustomForm());
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
