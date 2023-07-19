@@ -141,7 +141,7 @@ class TextFieldAlertDialog extends StatelessWidget {
 */
 import 'package:flutter/material.dart';
 void main() {
-  runApp(new MaterialApp(home: new MyApp()));
+  runApp(MaterialApp(home: MyApp()));
 }
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -150,7 +150,7 @@ class MyApp extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Select Option AlertDialog"),
+        title: const Text("Select Option AlertDialog"),
       ),
       body: Center(
         child: Column(
@@ -164,7 +164,7 @@ class MyApp extends StatelessWidget {
               child: const Text(
                 "Show Alert",
                 style: TextStyle(fontSize: 20.0),),
-              padding: EdgeInsets.fromLTRB(30.0,10.0,30.0,10.0),
+              padding: const EdgeInsets.fromLTRB(30.0,10.0,30.0,10.0),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
               ),
@@ -175,6 +175,9 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+RaisedButton({required Future<Null> Function() onPressed, required Text child, required EdgeInsets padding, required RoundedRectangleBorder shape, required MaterialColor color}) {
 }
 enum Product { Apple, Samsung, Oppo, Redmi }
 Future<Product?> _asyncSimpleDialog(BuildContext context) async {
