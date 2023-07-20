@@ -52,6 +52,7 @@ class _CalculateState extends State<Calculate> {
                   width: 50,
                   child: ElevatedButton(
                     onPressed: () {
+
                     }, child: const Text('+')
                   ),
                 ),
