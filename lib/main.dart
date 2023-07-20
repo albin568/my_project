@@ -92,7 +92,7 @@ class Data extends ChangeNotifier{
   }
 }*/
 import 'package:flutter/material.dart';
-
+import 'package:my_project/m2_level_1/q4.dart';
 main(){
   runApp(const MyApp());
 }
@@ -105,7 +105,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blueGrey
       ),
-      home: MyApp(),
+      home: const Contain(),
     );
   }
 }
+/*class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.cyan
+      ),
+      home: const Home(),
+    );
+  }
+}*/
