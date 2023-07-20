@@ -92,7 +92,7 @@ class Data extends ChangeNotifier{
   }
 }*/
 import 'package:flutter/material.dart';
-import 'm2_level_1/q5.dart';
+import 'm2_level_1/q3.dart';
 main(){
   runApp(const MyApp());
 }
@@ -103,9 +103,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          primarySwatch: Colors.blueGrey
+          primarySwatch: Colors.blue
       ),
-      home: BorderWidget(),
+      home: const Calculate(),
     );
   }
 }
