@@ -26,6 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
             padding: EdgeInsets.all(10.0),
             child: TextField(
               decoration: InputDecoration(
+                label: Text('Name'),
                 border: OutlineInputBorder(),
                 hintText: "Enter name"
               ),
@@ -36,6 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: TextField(
               controller: emailController,
               decoration: const InputDecoration(
+                label: Text('Email'),
                 hintText: "Enter email",
                 border: OutlineInputBorder()
               ),
@@ -46,6 +48,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: TextField(
               controller: passwordController,
               decoration: const InputDecoration(
+                label: Text('Password'),
               hintText: "Enter password",
               border: OutlineInputBorder(),
 
@@ -57,6 +60,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: TextField(
                   controller: confirmController,
                   decoration: const InputDecoration(
+                    label: Text('Confirm password'),
                     border: OutlineInputBorder(),
                     hintText: "Confirm password",
                   ),
@@ -73,7 +77,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   }
                   );
                 },
-                    child: const Text("Login")),
+                    child: const Text("Register")),
               ),
           TextButton(onPressed: () {},
               child: const Text("Already have an account? Click here!")),

@@ -14,12 +14,13 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Welcome to Felis Catus'),
       ),
+
       body: Center(
         child: Container(
-      height: 80.0,
-      width: 80.0,
-      color: Colors.tealAccent,
-      child: const Align(
+          height: 80.0,
+          width: 80.0,
+          color: Colors.tealAccent,
+          child: const Align(
         alignment: Alignment.topRight,
         // child: Icon(
           // size: 60,

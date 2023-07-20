@@ -91,7 +91,7 @@ class Data extends ChangeNotifier{
     notifyListeners();
   }
 }*/
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'm2_level_1/q3.dart';
 main(){
   runApp(const MyApp());
@@ -108,7 +108,7 @@ class MyApp extends StatelessWidget {
       home: const Calculate(),
     );
   }
-}
+}*/
 /*class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -122,3 +122,22 @@ class MyApp extends StatelessWidget {
     );
   }
 }*/
+import 'package:flutter/material.dart';
+import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
+
+main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
+      home: const RegisterPage(),
+    );
+  }
+}
