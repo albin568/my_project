@@ -12,14 +12,14 @@ class _BorderWidgetState extends State<BorderWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-        width: 200,
-        decoration: const BoxDecoration(
-          color: Colors.greenAccent,
-          border: Border(top: BorderSide(width: 4),
-          right: BorderSide(width: 5)),
+      height: 50,
+      width: 75,
+      alignment: Alignment.center,
+      margin: const EdgeInsets.all(5),
+      color: Colors.grey,
+      child: const Text("Decoration"),
 
-        ),
+
     );
   }
 }
