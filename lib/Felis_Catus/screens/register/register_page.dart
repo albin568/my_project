@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/login/login_page.dart';
-
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
@@ -9,13 +7,23 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  bool passwordVisible = false;
+
+  @override
+  void initState(){
+    super.initState();
+    passwordVisible = true;
+  }
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   var confirmController = TextEditingController();
   var email="", password="", confirm="";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.green),
+    home: Scaffold(
       appBar: AppBar(
         title: const Text("Registration"),
       ),
@@ -45,19 +53,28 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextField(
+            child: TextFormField(
               controller: passwordController,
               decoration: const InputDecoration(
                 label: Text('Password'),
               hintText: "Enter password",
               border: OutlineInputBorder(),
-
+                // suffixIcon: IconButton(
+                //   icon: Icon(passwordVisible!
+                //       ? Icons.visibility
+                //       : Icons.visibility_off),
+                // ),
+                alignLabelWithHint: false,
+                filled: true,
             ),
+              keyboardType: TextInputType.visiblePassword,
+              textInputAction: TextInputAction.done,
             ),
           ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
+                  obscureText: passwordVisible,
                   controller: confirmController,
                   decoration: const InputDecoration(
                     label: Text('Confirm password'),
@@ -83,6 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
               child: const Text("Already have an account? Click here!")),
         ],
       ),
+    ),
     );
   }
 }
