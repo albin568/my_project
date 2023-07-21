@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/m2_level_1/q1.dart';
+import 'package:my_project/m2_level_1/q3.dart';
 
 
 main(){
@@ -136,9 +136,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.lightBlue,
       ),
-      home: const Tree(),
+      home: const Calculate(),
     );
   }
 }

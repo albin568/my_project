@@ -19,32 +19,33 @@ class _CalculateState extends State<Calculate> {
             padding: EdgeInsets.all(8.0),
             child: TextField(),
           ),
-          Row(
-            children: const [
-              Text("Number 1:"),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder()
-                  ),
-                ),
-              )
-            ],
-          ),
-          Row(
-            children: const [
-              Text("Number 2:"),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder()
-                  ),
-                ),
-              )
-            ],
-          ),
+    //       Row(
+    //         children: [
+    //           Text("Number 1:"),
+    //           Padding(
+    //             padding: EdgeInsets.all(8.0),
+    //             child: TextField(
+    //               // decoration: InputDecoration(
+    //               //   border: OutlineInputBorder()
+    //               ),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    // Row(
+    // children: [
+    // Text("Number 1:"),
+    // Padding(
+    // padding: EdgeInsets.all(8.0),
+    // child: TextField(
+    // // decoration: InputDecoration(
+    // //   border: OutlineInputBorder()
+    // ),
+    // ),
+    // ],
+    // ),
+
+
               Row(
               children: [
                 SizedBox(
@@ -83,8 +84,7 @@ class _CalculateState extends State<Calculate> {
               ],
 
               ),
-            ],
-          ),
+      ),
     );
   }
 }
