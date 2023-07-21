@@ -123,7 +123,8 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
+import 'package:my_project/m2_level_1/q1.dart';
+
 
 main(){
   runApp(const MyApp());
@@ -137,7 +138,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: const RegisterPage(),
+      home: const Tree(),
     );
   }
 }

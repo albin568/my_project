@@ -56,18 +56,80 @@ class _TreeState extends State<Tree> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        Container(
-          margin: const EdgeInsets.all(8.0),
-          padding: const EdgeInsets.all(8.0),
-                  decoration: ShapeDecoration(
-                      shape: CircleBorder(side:
-                      BorderSide(width: 1),eccentricity: 1.0
-                      ), color: Colors.pinkAccent),
+          Row(
+            children: [
+
+          Container(
+            margin: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(30.0),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.pinkAccent,
+            ),
                   child: const Text(
                     "Container",
                     style: TextStyle(color: Colors.black),
                   ),
-        ),
+          ),
+          ],
+          ),
+          Row(
+            children: [
+              Container(
+                margin: const EdgeInsets.all(100.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                 color: Colors.lightBlueAccent,
+              ),
+                child: const Text(
+                  "Row",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                margin: const EdgeInsets.all(100.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Column",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(100.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Column",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(100.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Column",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ],
+          )
+
         ],
       ),
     );
