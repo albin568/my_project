@@ -123,8 +123,7 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/m2_level_1/q3.dart';
-
+import 'package:my_project/Felis_Catus/screens/home/home_page.dart';
 
 main(){
   runApp(const MyApp());
@@ -136,9 +135,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: const Calculate(),
+      home: const HomePage(),
     );
   }
 }

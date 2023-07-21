@@ -54,6 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+              obscureText: passwordVisible,
               controller: passwordController,
               decoration: const InputDecoration(
                 label: Text('Password'),
@@ -74,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  obscureText: passwordVisible,
+                  // obscureText: passwordVisible,
                   controller: confirmController,
                   decoration: const InputDecoration(
                     label: Text('Confirm password'),
