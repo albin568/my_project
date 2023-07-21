@@ -10,47 +10,7 @@ class Tree extends StatefulWidget {
 class _TreeState extends State<Tree> {
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: const Text("Flutter Row Example"),
-    //   ),
-    //   body: Row(
-    //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //       children: <Widget>[
-    //         Container(
-    //           margin: const EdgeInsets.all(12.0),
-    //           padding: const EdgeInsets.all(8.0),
-    //           decoration: BoxDecoration(
-    //               borderRadius: BorderRadius.circular(8),
-    //               color: Colors.blue),
-    //           child: const Text(
-    //             "Flutter",
-    //             style: TextStyle(color: Colors.black, fontSize: 25),
-    //           ),
-    //         ),
-    //         Container(
-    //           margin: const EdgeInsets.all(15.0),
-    //           padding: const EdgeInsets.all(8.0),
-    //           decoration: BoxDecoration(
-    //               borderRadius: BorderRadius.circular(8),
-    //               color: Colors.green),
-    //           child: const Text(
-    //             "Android",
-    //             style: TextStyle(color: Colors.black, fontSize: 25),
-    //           ),
-    //         ),
-    //         Container(
-    //           margin: const EdgeInsets.all(12.0),
-    //           padding: const EdgeInsets.all(8.0),
-    //           decoration: BoxDecoration(
-    //               borderRadius: BorderRadius.circular(8), color: Colors.black),
-    //           child: const Text(
-    //             "iOS",
-    //             style: TextStyle(color: Colors.white, fontSize: 25),
-    //           ),
-    //         )
-    //       ]),
-    // );
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -60,7 +20,8 @@ class _TreeState extends State<Tree> {
             children: [
 
           Container(
-            margin: const EdgeInsets.all(100.0),
+            margin: const EdgeInsets.symmetric(horizontal: 250),
+            // margin: const EdgeInsets.all(30.0),
             padding: const EdgeInsets.all(30.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
@@ -76,7 +37,10 @@ class _TreeState extends State<Tree> {
           Row(
             children: [
               Container(
-                margin: const EdgeInsets.all(100.0),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 270),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(60.0),
                 padding: const EdgeInsets.all(30.0),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
@@ -92,7 +56,10 @@ class _TreeState extends State<Tree> {
           Row(
             children: [
               Container(
-                margin: const EdgeInsets.all(100.0),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(10.0),
                 padding: const EdgeInsets.all(30.0),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
@@ -104,7 +71,10 @@ class _TreeState extends State<Tree> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(100.0),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 40, horizontal: 50),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(30.0),
                 padding: const EdgeInsets.all(30.0),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
@@ -116,7 +86,10 @@ class _TreeState extends State<Tree> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(100.0),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
                 padding: const EdgeInsets.all(30.0),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
@@ -128,8 +101,150 @@ class _TreeState extends State<Tree> {
                 ),
               ),
             ],
+          ),
+          Row(
+            children: [
+              Container(
+                // margin: const EdgeInsets.symmetric(
+                //     vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Icon",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.pinkAccent,
+                ),
+                child: const Text(
+                  "Container",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Icon",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.pinkAccent,
+                ),
+                child: const Text(
+                  "Container",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Icon",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.pinkAccent,
+                ),
+                child: const Text(
+                  "Container",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Text",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Text",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    vertical: 30, horizontal: 70),
+                // margin: const EdgeInsets.symmetric(vertical: 50),
+                // margin: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(30.0),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightBlueAccent,
+                ),
+                child: const Text(
+                  "Text",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ],
           )
-
         ],
       ),
     );
