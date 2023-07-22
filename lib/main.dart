@@ -123,7 +123,9 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/home/home_page.dart';
+import 'package:my_project/m2_level_1/q2.dart';
+
+import 'm2_level_1/q6.dart';
 
 main(){
   runApp(const MyApp());
@@ -135,9 +137,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      // home: const Quiz(),
+      home: ContainerWidget2(),
     );
   }
 }

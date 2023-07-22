@@ -84,6 +84,7 @@ class _CalculateState extends State<Calculate> {
               ],
 
               ),
+    ],
       ),
     );
   }

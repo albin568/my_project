@@ -11,12 +11,16 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("                   Kids Quiz App"),
-      ),
-      body: TextFormField(
-        textInputAction: AlertDialog(
 
-        ),
+        title: const Text("Kids Quiz App"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: const [
+          Text("Select the Correct answer from below:"),
+          
+        ],
+
       ),
     );
   }
