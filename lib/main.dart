@@ -126,6 +126,8 @@ import 'package:flutter/material.dart';
 import 'package:my_project/m2_level_1/q2.dart';
 
 import 'm2_level_1/q6.dart';
+import 'm2_level_1/q7.dart';
+import 'm2_level_1/q8.dart';
 
 main(){
   runApp(const MyApp());
@@ -140,7 +142,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const Quiz(),
-      home: ContainerWidget2(),
+      // home: TwoSide(),
+      home: RadiusWidget(),
     );
   }
 }
