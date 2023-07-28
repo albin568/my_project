@@ -19,9 +19,13 @@ class _CalculateState extends State<Calculate> {
             TextField(
               onChanged: (value) {
 
-              },
+                },
             ),
-            TextField(),
+            TextField(
+              // decoration: InputDecoration(
+              //      alignLabelWithHint:
+              // ),
+            ),
     //       Row(
     //         children: [
     //           Text("Number 1:"),
