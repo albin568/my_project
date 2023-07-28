@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/Felis_Catus/screens/forget_password/forget_password.dart';
+import 'package:my_project/Felis_Catus/screens/home/home_page.dart';
+import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -44,7 +47,13 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(20.0),
             child: Align(
               alignment: Alignment.centerRight,
-            child: TextButton(onPressed: () {},
+            child: TextButton(onPressed: () {
+              setState(() {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder:
+                        (context) => const ForgetPassword(),));
+              });
+            },
                 child: const Text("Forget password?")),
           ),
           ),
@@ -54,16 +63,24 @@ class _LoginPageState extends State<LoginPage> {
             child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                      print(emailController.text + passwordController.text);
-                    email = emailController.text;
-                    password = passwordController.text;
+                     Navigator.pushReplacement(context,
+                         MaterialPageRoute(builder:
+                             (context) => const HomePage(),));
                   }
                   );
                 },
                 child: const Text("Login"),
+
             ),
           ),
-          TextButton(onPressed: () {}, child: const Text("No account? Create One")),
+          TextButton(onPressed: () {
+            setState(() {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder:
+                      (context) => const RegisterPage(),));
+            });
+          },
+              child: const Text("No account? Create One")),
 
         ],
       ),

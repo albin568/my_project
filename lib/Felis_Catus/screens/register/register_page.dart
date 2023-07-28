@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/Felis_Catus/screens/login/login_page.dart';
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
@@ -22,7 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
     home: Scaffold(
       appBar: AppBar(
         title: const Text("Registration"),
@@ -60,11 +61,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 label: Text('Password'),
               hintText: "Enter password",
               border: OutlineInputBorder(),
-                // suffixIcon: IconButton(
-                //   icon: Icon(passwordVisible!
-                //       ? Icons.visibility
-                //       : Icons.visibility_off),
-                // ),
                 alignLabelWithHint: false,
                 filled: true,
             ),
@@ -89,16 +85,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: 200,
                 child: ElevatedButton(onPressed: () {
                   setState(() {
-                    print(emailController.text + passwordController.text);
-                    email = emailController.text;
-                    password = passwordController.text;
-                  }
-                  );
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder:
+                            (context) => const LoginPage(),));
+                  });
                 },
                     child: const Text("Register")),
               ),
-          TextButton(onPressed: () {},
-              child: const Text("Already have an account? Click here!")),
+          TextButton(onPressed: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const LoginPage(),));
+          },
+              child: const Text("Already have an account?")),
         ],
       ),
     ),

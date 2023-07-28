@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class ButtonExamples extends StatefulWidget {
@@ -65,5 +66,61 @@ class _ButtonExamplesState extends State<ButtonExamples> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+}*/
+import 'package:flutter/material.dart';
+class RadioExample1 extends StatefulWidget {
+  const RadioExample1({super.key});
+
+  @override
+  State<RadioExample1> createState() => _RadioExample1State();
+}
+enum BestFlutterSite { flutterdev, pubdev, medium }
+
+class _RadioExample1State extends State<RadioExample1>{
+var _selectValue = BestFlutterSite.flutterdev;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+            children: [
+            ListTile(
+              title: const Text("https://flutter.dev"),
+              leading: Radio(
+                activeColor: Colors.redAccent,
+                value: BestFlutterSite.flutterdev,
+                groupValue: _selectValue,
+                onChanged: (BestFlutterSite? value) {
+                  setState(() {
+                    _selectValue = value!;
+                  });
+                },
+              ),
+            ),
+      ListTile(
+        title: const Text("https://pub.dev"),
+        leading: Radio(
+          value: BestFlutterSite.pubdev,
+          groupValue: _selectValue,
+          onChanged: (BestFlutterSite? value) {
+            setState(() {
+              _selectValue = value!;
+            });
+          },
+        ),
+      ),
+      ListTile(
+        title: const Text("https://medium.com"),
+        leading: Radio(
+          value: BestFlutterSite.medium,
+          groupValue: _selectValue,
+          onChanged: (BestFlutterSite? value) {
+            setState(() {
+              _selectValue = value!;
+            });
+          },
+        ),
+      ),
+    ],
+  );
   }
 }

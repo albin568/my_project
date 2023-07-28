@@ -123,15 +123,13 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/m2_level_1/q2.dart';
+import 'package:my_project/m2_level_1/q3.dart';
 
-import 'm2_level_1/q10.dart';
-import 'm2_level_1/q6.dart';
-import 'm2_level_1/q7.dart';
-import 'm2_level_1/q8.dart';
-import 'm2_level_1/q9.dart';
 
 main(){
+  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  //     statusBarColor: Colors.transparent
+  // ));
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -141,13 +139,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
-      // home: const Quiz(),
       // home: TwoSide(),
       // home: RadiusWidget(),
       // home: CircleBorder1(),
-      home: Horizontal(),
+      // home: const MyCustomForm(),
+      // home: const Contain(),
+      home: const Calculate(),
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     title: const Text("Radio"),
+      //   ),
+      //   body: const Quiz(),
+      // ),
     );
   }
 }

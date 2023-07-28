@@ -14,11 +14,14 @@ class _CalculateState extends State<Calculate> {
         title: const Text("Simple Calculator"),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextField(),
-          ),
+            TextField(
+              onChanged: (value) {
+
+              },
+            ),
+            TextField(),
     //       Row(
     //         children: [
     //           Text("Number 1:"),
@@ -47,38 +50,51 @@ class _CalculateState extends State<Calculate> {
 
 
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   height: 50,
-                  width: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
+                  width: 75,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: ElevatedButton(
+                      onPressed: () {
 
-                    }, child: const Text('+')
+                      }, child: const Text('+')
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 50,
-                  width: 50,
-                  child: ElevatedButton(
-                  onPressed: () {
-                    }, child: const Text('-'),
-                  ),
-                ),
-                SizedBox(
-                  height: 50,
-                  width: 50,
-                  child: ElevatedButton(
+                  width: 75,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: ElevatedButton(
                     onPressed: () {
-                    }, child: const Text('*'),
+                      }, child: const Text('-'),
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 50,
-                  width: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                    }, child: const Text('/'),
+                  width: 75,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                      }, child: const Text('*'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                  width: 75,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                      }, child: const Text('/'),
+                    ),
                   ),
                 ),
               ],
