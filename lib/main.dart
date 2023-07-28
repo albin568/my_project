@@ -123,6 +123,9 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
+import 'package:my_project/Felis_Catus/screens/login/login_page.dart';
+import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
+import 'package:my_project/Felis_Catus/screens/splash/splash_screen.dart';
 import 'package:my_project/m2_level_1/q3.dart';
 
 
@@ -146,7 +149,7 @@ class MyApp extends StatelessWidget {
       // home: CircleBorder1(),
       // home: const MyCustomForm(),
       // home: const Contain(),
-      home: const Calculate(),
+      home: const SplashScreen(),
       // home: Scaffold(
       //   appBar: AppBar(
       //     title: const Text("Radio"),

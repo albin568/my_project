@@ -21,9 +21,9 @@ class _FormSampleState extends State<FormSample> {
 
             child: Column(
 
-          children: [
+            children: [
 
-            TextFormField(
+              TextFormField(
               validator: (value) {
                 if(value!.isEmpty){
                   return 'Please enter name';
@@ -34,16 +34,18 @@ class _FormSampleState extends State<FormSample> {
 
 
             ),
-            ElevatedButton(onPressed: () {
+              ElevatedButton(onPressed: () {
               setState(() {
                 if(_formkey.currentState!.validate()){
-                  var message=SnackBar(content: Text("Success"));
+                  var message=const SnackBar(content: Text("Success"));
                   ScaffoldMessenger.of(context).showSnackBar(message);
                 }
               });
-            }, child: Text("Login"))
-          ],
-        )),
+            },
+                child: const Text("Login"))
+            ],
+            )
+        ),
       ]),
     );
   }
