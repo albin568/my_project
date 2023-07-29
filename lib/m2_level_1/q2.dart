@@ -9,9 +9,9 @@ class Quiz extends StatefulWidget {
 enum RadioBtn { carnivore, herbivore, omnivore }
 
 class _QuizState extends State<Quiz> {
-  var _selectValue1=RadioBtn.carnivore;
-  var _selectValue2=RadioBtn.herbivore;
-  // var _selectValue3=RadioBtn.omnivore;
+  RadioBtn _selectValue1=RadioBtn.carnivore;
+  // RadioBtn _selectValue2=RadioBtn.herbivore;
+  // RadioBtn _selectValue3=RadioBtn.omnivore;
 
   @override
   Widget build(BuildContext context) {
@@ -26,24 +26,27 @@ class _QuizState extends State<Quiz> {
         children: [
           const Text("Select correct answers from below:"),
           Column(
-           children: [
-             Row(
-               children: [
+           // children: [
+           //   Row(
+               children: <Widget>[
               const Text("Lion is:"),
-              ListTile(
-               title: const Text("Carnivore"),
-               leading: Radio(value: RadioBtn.carnivore,
+              // ListTile(
+            Row(children: [
+                const Text("Carnivore"),
+               Radio(
+                 value: RadioBtn.carnivore,
                    groupValue: _selectValue1,
-                   onChanged: (RadioBtn? value) {
+                   onChanged: (RadioBtn value) {
                      setState(() {
-                       _selectValue1 = value!;
+                       _selectValue1 = value;
                      });
                    },
-               ),
+               ),]
              ),
                  ListTile(
                    title: const Text("Herbivore"),
-                   leading: Radio(value: RadioBtn.carnivore,
+                   leading: Radio(
+                     value: RadioBtn.herbivore,
                      groupValue: _selectValue1,
                      onChanged: (RadioBtn? value) {
                        setState(() {
@@ -53,7 +56,8 @@ class _QuizState extends State<Quiz> {
                  ),
                  ListTile(
                    title: const Text("Omnivore"),
-                   leading: Radio(value: RadioBtn.carnivore,
+                   leading: Radio(
+                     value: RadioBtn.omnivore,
                      groupValue: _selectValue1,
                      onChanged: (RadioBtn? value) {
                        setState(() {
@@ -63,7 +67,7 @@ class _QuizState extends State<Quiz> {
                  ),
               ],
              ),
-             Row(
+             /*Row(
                children: [
                  const Text("Giraffe is:"),
                  ListTile(
@@ -134,13 +138,11 @@ class _QuizState extends State<Quiz> {
                      },),
                  ),
                ],
-             ),
+             ),*/
 
 
            ],
           )
-        ],
-      ),
     );
   }
 }
