@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/m2_level_1/2.dart';
+import 'package:my_project/Felis_Catus/screens/login/login_page.dart';
 
 
 main(){
@@ -139,14 +139,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
+        // primarySwatch: Colors.purple,
       ),
       // home: TwoSide(),
       // home: RadiusWidget(),
       // home: CircleBorder1(),
       // home: const MyCustomForm(),
       // home: const Contain(),
-      home: const QuizApp(),
+      home: const LoginPage(),
       // home: Scaffold(
       //   appBar: AppBar(
       //     title: const Text("Radio"),

@@ -10,7 +10,8 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final _registerkey=GlobalKey<FormState>();
-  bool _passwordVisible=false;
+  bool passwordVisible = false;
+  bool confirmVisible = false;
 
   @override
   void initState(){
@@ -20,7 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   var confirmController = TextEditingController();
-  var email="", password="", confirm="";
+  var name="", email="", password="", confirm="";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,8 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Form(
               key: _registerkey,
                 child: Column(
-
-                    children: [
+                        children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
@@ -82,28 +82,23 @@ class _RegisterPageState extends State<RegisterPage> {
                             }
                             return null;
                           },
-                          obscureText: !_passwordVisible,
+                          obscureText: !passwordVisible,
                           controller: passwordController,
-                          decoration: const InputDecoration(
-                            // suffixIcon: IconButton(
-                            //     icon: Icon(
-                            //         _passwordVisible
-                            //     ? Icons.visibility
-                            //     : Icons.visibility_off),
-                            //   onPressed: () {
-                            //       setState(() {
-                            //         _passwordVisible = !_passwordVisible;
-                            //       });
-                            // },
-                            // ),
-                            label: Text('Password'),
-                          hintText: "Enter password",
-                          border: OutlineInputBorder(),
-                          alignLabelWithHint: false,
-                          filled: true,
-                        ),
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.done,
+                          decoration: InputDecoration(
+                              border: const OutlineInputBorder(),
+                              labelText: "Password",
+                              hintText: "Enter password",
+                              suffixIcon: IconButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      passwordVisible = !passwordVisible;
+                                    });
+                                  },
+                                  icon: Icon(passwordVisible ?
+                                  Icons.visibility: Icons.visibility_off)))
+                        //   alignLabelWithHint: false,
+                        //   filled: true,
+                        // ),
               ),
             ),
                 Padding(
@@ -115,13 +110,20 @@ class _RegisterPageState extends State<RegisterPage> {
                       }
                       return null;
                     },
-                    obscureText: _passwordVisible,
+                    obscureText: !confirmVisible,
                     controller: confirmController,
-                    decoration: const InputDecoration(
-                      label: Text('Confirm password'),
-                      border: OutlineInputBorder(),
-                      hintText: "Confirm password",
-                    ),
+                      decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
+                          label: const Text('Confirm password'),
+                          hintText: "Confirm password",
+                          suffixIcon: IconButton(
+                              onPressed: (){
+                                setState(() {
+                                  confirmVisible = !confirmVisible;
+                                });
+                              },
+                              icon: Icon(confirmVisible ?
+                              Icons.visibility: Icons.visibility_off)))
                   ),
                 ),
                 SizedBox(
@@ -130,12 +132,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: ElevatedButton(onPressed: () {
                     setState(() {
                       if (_registerkey.currentState!.validate()) {
-                        var message = const SnackBar(content: Text("Success"));
-                        ScaffoldMessenger.of(context).showSnackBar(message);
-
+                        // var message = const SnackBar(content: Text("Success"));
+                        // ScaffoldMessenger.of(context).showSnackBar(message);
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder:
-                                (context) => const LoginPage(),));
+                                (context) => const LoginPage()));
                       }
                     },
                     );
@@ -149,8 +150,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: const Text("Already have an account? Click here")),
 
 
-        ],
-      ),
+
+                    ],
+                ),
     ),
           ),
       ]

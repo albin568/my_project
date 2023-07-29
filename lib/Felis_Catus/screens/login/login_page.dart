@@ -11,6 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _loginkey=GlobalKey<FormState>();
+  bool passVisible = false;
 
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -47,23 +48,32 @@ class _LoginPageState extends State<LoginPage> {
               ),
                   ),
 
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    validator: (value) {
-                      if(value!.isEmpty){
-                        return 'Please enter password';
-                      }
-                      return null;
-                    },
-              controller: passwordController,
-              decoration: const InputDecoration(
-                  labelText: 'Password',
-                  hintText: "Enter password",
-                    border: OutlineInputBorder()),
-            ),
-                ),
-
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                        obscureText: !passVisible,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter password';
+                          }
+                          return null;
+                        },
+                        controller: passwordController,
+                        decoration: InputDecoration(
+                            border: const OutlineInputBorder(),
+                            labelText: "Password",
+                            suffixIcon: IconButton(
+                                onPressed: (){
+                                  setState(() {
+                                    passVisible = !passVisible;
+                                  });
+                                },
+                                icon: Icon(passVisible ?
+                                Icons.visibility: Icons.visibility_off)))),
+                  ),
+                ]
+              )
+    ),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Align(
@@ -108,12 +118,9 @@ class _LoginPageState extends State<LoginPage> {
           },
                   child: const Text("No account? Create One")),
 
-        ],
+    ]
       ),
-      ),
-      ],
-    ),
-    // ),
     );
+    // ),
   }
 }

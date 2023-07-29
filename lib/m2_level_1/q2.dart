@@ -1,148 +1,250 @@
 import 'package:flutter/material.dart';
-
-class Quiz extends StatefulWidget {
-  const Quiz({Key? key}) : super(key: key);
+class QuizApp extends StatefulWidget {
+  const QuizApp({super.key});
 
   @override
-  State<Quiz> createState() => _QuizState();
+  State<QuizApp> createState() => _QuizAppState();
 }
-enum RadioBtn { carnivore, herbivore, omnivore }
 
-class _QuizState extends State<Quiz> {
-  RadioBtn _selectValue1=RadioBtn.carnivore;
-  // RadioBtn _selectValue2=RadioBtn.herbivore;
-  // RadioBtn _selectValue3=RadioBtn.omnivore;
-
+class _QuizAppState extends State<QuizApp> {
+  String lion='carnivore';
+  String giraffe='herbivore';
+  String elephant='herbivore';
+  String tiger='carnivore';
+  String bear='omnivore';
+  var _result;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: const Text("Kids Quiz App"),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text("Select correct answers from below:"),
-          Column(
-           // children: [
-           //   Row(
-               children: <Widget>[
-              const Text("Lion is:"),
-              // ListTile(
-            Row(children: [
-                const Text("Carnivore"),
-               Radio(
-                 value: RadioBtn.carnivore,
-                   groupValue: _selectValue1,
-                   onChanged: (RadioBtn value) {
-                     setState(() {
-                       _selectValue1 = value;
-                     });
-                   },
-               ),]
-             ),
-                 ListTile(
-                   title: const Text("Herbivore"),
-                   leading: Radio(
-                     value: RadioBtn.herbivore,
-                     groupValue: _selectValue1,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue1 = value!;
-                       });
-                     },),
-                 ),
-                 ListTile(
-                   title: const Text("Omnivore"),
-                   leading: Radio(
-                     value: RadioBtn.omnivore,
-                     groupValue: _selectValue1,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue1 = value!;
-                       });
-                     },),
-                 ),
-              ],
-             ),
-             /*Row(
-               children: [
-                 const Text("Giraffe is:"),
-                 ListTile(
-                   title: const Text("Carnivore"),
-                   leading: Radio(value: RadioBtn.herbivore,
-                     groupValue: _selectValue2,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue2 = value!;
-                       });
-                     },
-                   ),
-                 ),
-                 ListTile(
-                   title: const Text("Herbivore"),
-                   leading: Radio(value: RadioBtn.herbivore,
-                     groupValue: _selectValue2,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue2 = value!;
-                       });
-                     },),
-                 ),
-                 ListTile(
-                   title: const Text("Omnivore"),
-                   leading: Radio(value: RadioBtn.herbivore,
-                     groupValue: _selectValue2,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue2 = value!;
-                       });
-                     },),
-                 ),
-               ],
-             ),
-             Row(
-               children: [
-                 const Text("Elephant is:"),
-                 ListTile(
-                   title: const Text("Carnivore"),
-                   leading: Radio(value: RadioBtn.carnivore,
-                     groupValue: _selectValue1,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue1 = value!;
-                       });
-                     },
-                   ),
-                 ),
-                 ListTile(
-                   title: const Text("Herbivore"),
-                   leading: Radio(value: RadioBtn.carnivore,
-                     groupValue: _selectValue1,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue1 = value!;
-                       });
-                     },),
-                 ),
-                 ListTile(
-                   title: const Text("Omnivore"),
-                   leading: Radio(value: RadioBtn.carnivore,
-                     groupValue: _selectValue1,
-                     onChanged: (RadioBtn? value) {
-                       setState(() {
-                         _selectValue1 = value!;
-                       });
-                     },),
-                 ),
-               ],
-             ),*/
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(25.0),
+                child: Text("Select correct answers from below:",
+                style: TextStyle(fontWeight: FontWeight.bold,
+                fontSize: 17)),
+              ),
+              Column(
+                  children: [
+                    const Text("Lion is:",
+                        style: TextStyle(fontWeight: FontWeight.bold,
+                            fontSize: 15)),
+                    Row (
+                        children: [
+                          Radio<String>(
+                            value: 'carnivore',
+                            groupValue: _result,
+                            onChanged: (value){
+                              setState((){
+                                _result = value!;
+                              });
+                            },
+                          ),
+                          const Text('Carnivore'),
+                          Radio<String>(
+                            value: 'herbivore',
+                            groupValue: _result,
+                            onChanged: (value){
+                              setState((){
+                                _result = value!;
+                              });
+                            },
+                          ),
+                          const Text('Herbivore'),
+                          Radio<String>(
+                            value: 'omnivore',
+                            groupValue: _result,
+                            onChanged: (value){
+                              setState((){
+                                _result = value!;
+                              });
+                            },
+                          ),
+                          const Text('Omnivore'),
+                        ])
+                  ],
+                ),
+              Column(
+                children: [const Text("Giraffe is:",
+                    style: TextStyle(fontWeight: FontWeight.bold,
+                        fontSize: 15)),
+                  Row (
+                      children: [
+                        Radio<String>(
+                          value: 'carnivore',
+                          groupValue: giraffe,
+                          onChanged: (value){
+                            setState((){
+                              giraffe = value!;
+                            });
+                          },
+                        ),
+                        const Text('Carnivore'),
+                        Radio<String>(
+                          value: 'herbivore',
+                          groupValue: giraffe,
+                          onChanged: (value){
+                            setState((){
+                              giraffe = value!;
+                            });
+                          },
+                        ),
+                        const Text('Herbivore'),
+                        Radio<String>(
+                          value: 'omnivore',
+                          groupValue: giraffe,
+                          onChanged: (value){
+                            setState((){
+                              giraffe = value!;
+                            });
+                          },
+                        ),
+                        const Text('Omnivore'),
+                      ])
+                ],
+              ),
+              Column(
+                children: [const Text("Elephant is:",
+                    style: TextStyle(fontWeight: FontWeight.bold,
+                        fontSize: 15)),
+                  Row (
+                      children: [
+                        Radio<String>(
+                          value: 'carnivore',
+                          groupValue: elephant,
+                          onChanged: (value){
+                            setState((){
+                              elephant = value!;
+                            });
+                          },
+                        ),
+                        const Text('Carnivore'),
+                        Radio<String>(
+                          value: 'herbivore',
+                          groupValue: elephant,
+                          onChanged: (value){
+                            setState((){
+                              elephant = value!;
+                            });
+                          },
+                        ),
+                        const Text('Herbivore'),
+                        Radio<String>(
+                          value: 'omnivore',
+                          groupValue: elephant,
+                          onChanged: (value){
+                            setState((){
+                              elephant = value!;
+                            });
+                          },
+                        ),
+                        const Text('Omnivore'),
+                      ])
+                ],
+              ),
+              Column(
+                children: [const Text("Tiger is:",
+                    style: TextStyle(fontWeight: FontWeight.bold,
+                        fontSize: 15)),
+                  Row (
+                      children: [
+                        Radio<String>(
+                          value: 'carnivore',
+                          groupValue: tiger,
+                          onChanged: (value){
+                            setState((){
+                              tiger = value!;
+                            });
+                          },
+                        ),
+                        const Text('Carnivore'),
+                        Radio<String>(
+                          value: 'herbivore',
+                          groupValue: tiger,
+                          onChanged: (value){
+                            setState((){
+                              tiger = value!;
+                            });
+                          },
+                        ),
+                        const Text('Herbivore'),
+                        Radio<String>(
+                          value: 'omnivore',
+                          groupValue: tiger,
+                          onChanged: (value){
+                            setState((){
+                              tiger = value!;
+                            });
+                          },
+                        ),
+                        const Text('Omnivore'),
+                      ])
+                ],
+              ),
+              Column(
+                children: [const Text("Bear is:",
+                    style: TextStyle(fontWeight: FontWeight.bold,
+                        fontSize: 15)),
+                  Row (
+                      children: [
+                        Radio<String>(
+                          value: 'carnivore',
+                          groupValue: bear,
+                          onChanged: (value){
+                            setState((){
+                              bear = value!;
+                            });
+                          },
+                        ),
+                        const Text('Carnivore'),
+                        Radio<String>(
+                          value: 'herbivore',
+                          groupValue: bear,
+                          onChanged: (value){
+                            setState((){
+                              bear = value!;
+                            });
+                          },
+                        ),
+                        const Text('Herbivore'),
+                        Radio<String>(
+                          value: 'omnivore',
+                          groupValue: bear,
+                          onChanged: (value){
+                            setState((){
+                              bear = value!;
+                            });
+                          },
+                        ),
+                        const Text('Omnivore'),
+                      ])
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton
+                  (onPressed: () {
+                },
+                    child: const Text("Check Final Score")),
+              ),
 
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton
+                  (onPressed: () {
+                },
+                    child: const Text("Reset Selection")),
+              )
 
-           ],
-          )
+            ]
+        ),
+      ),
     );
   }
 }
