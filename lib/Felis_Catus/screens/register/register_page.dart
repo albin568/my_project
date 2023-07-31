@@ -34,6 +34,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          ListView(scrollDirection: Axis.vertical),
           Center(
             child: Form(
               key: _registerkey,

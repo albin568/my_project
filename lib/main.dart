@@ -123,11 +123,14 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/switch_example.dart';
+import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
+
+// import 'Felis_Catus/screens/splash/splash_screen.dart';
+// import 'package:my_project/switch_example.dart';
 // import 'package:my_project/m2_level_2/q1.dart';
 // import 'package:my_project/m2_level_2/q2.dart';
 
-import 'm2_level_2/q3.dart';
+// import 'm2_level_2/q3.dart';
 // import 'package:my_project/tooltip/tooltip_example.dart';
 
 // import 'm2_level_2/q1.dart';
@@ -148,14 +151,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // project theme
         // primarySwatch: Colors.blueGrey,
-        primarySwatch: Colors.red, //m2_level_2_q2
-        // primarySwatch: Colors.blueGray, //m2_level_2_q1
+        // primarySwatch: Colors.red, //m2_level_2_q2
+        primarySwatch: Colors.blueGrey, //m2_level_2_q1
 
       ),
       // home: const YogaLogin1(),
       // home: const YogaLogin2(),
       // home: const YogaLogin3(),
-      home: const SwitchExample(),
+      home: const RegisterPage(),
 
 
 
