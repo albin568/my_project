@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/m2_level_2/m2_lvl_2_forgetpass.dart';
 
-class YogaLogin1 extends StatefulWidget {
-  const YogaLogin1({super.key});
+class YogaLogin2 extends StatefulWidget {
+  const YogaLogin2({super.key});
 
   @override
-  State<YogaLogin1> createState() => _YogaLogin1State();
+  State<YogaLogin2> createState() => _YogaLogin2State();
 }
 
-class _YogaLogin1State extends State<YogaLogin1> {
+class _YogaLogin2State extends State<YogaLogin2> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   @override
@@ -18,11 +19,11 @@ class _YogaLogin1State extends State<YogaLogin1> {
       ),
       body: Center(
         child: Column(
-          
+
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/yoga1.jpg",
+              "assets/images/yoga2.jpg",
               height: 250.0,
               width: 250.0,
             ),
@@ -52,7 +53,6 @@ class _YogaLogin1State extends State<YogaLogin1> {
                   Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: TextButton(onPressed: () {
-
                     }, child:
                     const Text("Forget Password")),
                   ),
@@ -65,8 +65,8 @@ class _YogaLogin1State extends State<YogaLogin1> {
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all
                           <RoundedRectangleBorder>(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                              side: const BorderSide(color: Colors.red)
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: const BorderSide(color: Colors.red)
                           )),
                         ),
                         child: const Text("Login")),

@@ -123,7 +123,14 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/login/login_page.dart';
+import 'package:my_project/switch_example.dart';
+// import 'package:my_project/m2_level_2/q1.dart';
+// import 'package:my_project/m2_level_2/q2.dart';
+
+import 'm2_level_2/q3.dart';
+// import 'package:my_project/tooltip/tooltip_example.dart';
+
+// import 'm2_level_2/q1.dart';
 
 
 main(){
@@ -139,15 +146,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        // primarySwatch: Colors.purple,
+        // project theme
+        // primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.red, //m2_level_2_q2
+        // primarySwatch: Colors.blueGray, //m2_level_2_q1
+
       ),
-      // home: TwoSide(),
-      // home: RadiusWidget(),
-      // home: CircleBorder1(),
-      // home: const MyCustomForm(),
-      // home: const Contain(),
-      home: const LoginPage(),
+      // home: const YogaLogin1(),
+      // home: const YogaLogin2(),
+      // home: const YogaLogin3(),
+      home: const SwitchExample(),
+
+
+
       // home: Scaffold(
       //   appBar: AppBar(
       //     title: const Text("Radio"),
@@ -157,3 +168,15 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+/*class MyApp extends StatelessWidget {
+  const MyApp({super.key})
+  static const _title= 'Tooltip Sample';
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: _title,
+      home: TooltipSample(title: _title),
+    );
+  }
+}*/
