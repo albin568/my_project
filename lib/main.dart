@@ -123,7 +123,12 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
+import 'package:my_project/Felis_Catus/screens/settings/settings_page.dart';
+// import 'package:my_project/navigation_example_2/first_screen.dart';
+// import 'package:my_project/navigation_example_2/second_screen.dart';
+// import 'navigation_example_2/third_screen.dart';
+// import 'navigator_example/route1.dart';
+// import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
 
 // import 'Felis_Catus/screens/splash/splash_screen.dart';
 // import 'package:my_project/switch_example.dart';
@@ -148,17 +153,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      /*title: 'Named Routes Demo',
+      initialRoute: '/',
+      routes: {
+        '/':(context) => const FirstScreen(),
+        '/second':(context) => const SecondScreen(),
+        '/third' :(context) => const ThirdScreen(),
+      },*/
       theme: ThemeData(
         // project theme
         // primarySwatch: Colors.blueGrey,
         // primarySwatch: Colors.red, //m2_level_2_q2
         primarySwatch: Colors.blueGrey, //m2_level_2_q1
-
       ),
+
+
       // home: const YogaLogin1(),
       // home: const YogaLogin2(),
       // home: const YogaLogin3(),
-      home: const RegisterPage(),
+      home: const SettingsPage(),
 
 
 
