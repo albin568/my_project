@@ -124,6 +124,9 @@ class MyApp extends StatelessWidget {
 }*/
 import 'package:flutter/material.dart';
 import 'package:my_project/Felis_Catus/screens/profile/profile.dart';
+import 'package:my_project/Felis_Catus/screens/splash/splash_screen.dart';
+
+import 'Felis_Catus/screens/page/page.dart';
 // import 'package:my_project/navigation_example_2/first_screen.dart';
 // import 'package:my_project/navigation_example_2/second_screen.dart';
 // import 'navigation_example_2/third_screen.dart';
@@ -171,7 +174,7 @@ class MyApp extends StatelessWidget {
       // home: const YogaLogin1(),
       // home: const YogaLogin2(),
       // home: const YogaLogin3(),
-      home: const ProfilePage(),
+      home: const Page1(),
 
 
 

@@ -149,9 +149,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     MaterialPageRoute(builder: (context) => const LoginPage(),));
                   },
                     child: const Text("Already have an account? Click here")),
-
-
-
                     ],
                 ),
     ),
