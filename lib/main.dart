@@ -123,10 +123,11 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/profile/profile.dart';
+import 'package:my_project/Felis_Catus/screens/home/home_page.dart';
+import 'package:my_project/Felis_Catus/screens/settings/settings_page.dart';
 import 'package:my_project/Felis_Catus/screens/splash/splash_screen.dart';
-
-import 'Felis_Catus/screens/page/page.dart';
+// import 'package:my_project/videoplayer/videoplayer1.dart';
+// import 'Felis_Catus/screens/page/page.dart';
 // import 'package:my_project/navigation_example_2/first_screen.dart';
 // import 'package:my_project/navigation_example_2/second_screen.dart';
 // import 'navigation_example_2/third_screen.dart';
@@ -142,9 +143,7 @@ import 'Felis_Catus/screens/page/page.dart';
 // import 'package:my_project/tooltip/tooltip_example.dart';
 
 // import 'm2_level_2/q1.dart';
-
-
-main(){
+/*main(){
   // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
   //     statusBarColor: Colors.transparent
   // ));
@@ -156,13 +155,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      /*title: 'Named Routes Demo',
+      *//*title: 'Named Routes Demo',
       initialRoute: '/',
       routes: {
         '/':(context) => const FirstScreen(),
         '/second':(context) => const SecondScreen(),
         '/third' :(context) => const ThirdScreen(),
-      },*/
+      },*//*
       theme: ThemeData(
         // project theme
         // primarySwatch: Colors.blueGrey,
@@ -174,7 +173,7 @@ class MyApp extends StatelessWidget {
       // home: const YogaLogin1(),
       // home: const YogaLogin2(),
       // home: const YogaLogin3(),
-      home: const Page1(),
+      home: const VideoPlayerScreen(),
 
 
 
@@ -186,16 +185,38 @@ class MyApp extends StatelessWidget {
       // ),
     );
   }
+}*/
+/*
+main(){
+  runApp(const MyApp());
 }
-/*class MyApp extends StatelessWidget {
-  const MyApp({super.key})
-  static const _title= 'Tooltip Sample';
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: TooltipSample(title: _title),
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+      ),
+      home: const VideoPlayerScreen(),
     );
   }
 }*/
+main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+      ),
+      // home: const SettingsPage(),
+      home: const HomePage(),
+    );
+  }
+}

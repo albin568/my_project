@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/settings/logout_settings.dart';
+import 'package:my_project/Felis_Catus/screens/settings/change_password_settings.dart';
+import 'package:my_project/Felis_Catus/screens/settings/privacy_policy_settings.dart';
+import 'package:my_project/Felis_Catus/screens/settings/profile_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -9,6 +11,9 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  bool light=false;
+  bool message=true;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,39 +25,96 @@ class _SettingsPageState extends State<SettingsPage> {
           ListTile(
             leading: const Icon(Icons.account_circle),
             title: const Text('Account'),
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ProfilePage(),)
+                );
+              });
+            },
           ),
           ListTile(
             leading: const Icon(Icons.notifications),
             title: const Text('Notification'),
+            trailing: Switch(value: message, onChanged: (value) {
+              setState(() {
+                message=!message;
+              });
+            },),
             onTap: () {},
           ),
           ListTile(
             leading: const Icon(Icons.dark_mode),
             title: const Text('Dark Mode'),
+            trailing: Switch(value: light, onChanged: (value) {
+              setState(() {
+                light=!light;
+              });
+            },),
             onTap: () {},
-          ),ListTile(
+          ),
+          ListTile(
             leading: const Icon(Icons.privacy_tip),
             title: const Text('Privacy Policy'),
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                Navigator.push(context,
+                    MaterialPageRoute(builder:
+                        (context) => const PrivacyPolicyPage(),));
+              });
+            },
           ),
           ListTile(
             leading: const Icon(Icons.password),
             title: const Text('Change Password'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const ChangePassPage(),));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.delete),
             title: const Text('Delete Account'),
-            onTap: () {},
+            onTap: () {
+              showDialog(context: context, builder: (context) {
+                return AlertDialog(
+                  title: const Text("Delete Account"),
+                  content: const Text("Do you want to delete your account?"),
+                  actions: [
+                    TextButton(onPressed: () {
+                      Navigator.pop(context);
+                    },
+                        child: const Text("OK")),
+                    TextButton(onPressed: () {
+                      Navigator.pop(context);
+                    }, child: const Text("Cancel"))
+                  ],
+                );
+              },);
+            },
           ),
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Logout'),
             onTap: () {
-              // Navigator.push(context, LogoutSettings());
-            },
-          ),
+              showDialog(context: context, builder: (context) {
+                return AlertDialog(
+                  title: const Text("Logout"),
+                  content: const Text("Do you want to continue?"),
+                  actions: [
+                    TextButton(onPressed: () {
+                      Navigator.pop(context);
+                    }, 
+                        child: const Text("Cancel")),
+                    TextButton(onPressed: () {
+                      Navigator.pop(context);
+                    }, child: const Text("OK"))
+                  ],
+                );
+              },
+            );
+              },
+            ),
         ],
       ),
 

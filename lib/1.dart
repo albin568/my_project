@@ -1,71 +1,70 @@
 import 'package:flutter/material.dart';
-void main() {
-  runApp(const MyAp());
-}
-class MyAp extends StatelessWidget {
-  const MyAp({Key? key}) : super(key: key);
+import 'package:video_player/video_player.dart';
+class VideoPlayerScreen extends StatefulWidget {
+  const VideoPlayerScreen({super.key});
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-        primarySwatch: Colors.blue,
-    ),
-    home: Scaffold(
-    appBar: AppBar(
-    title: Text("Radio"),
-    ),
-    body: CheckBoxExample1(),
-    ),
+  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
+}
+class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
+  late VideoPlayerController _controller;
+  late Future<void> _initializeVideoPlayerFuture;
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+      ),
     );
-    }
-}
-class CheckBoxExample1 extends StatefulWidget {
-  const CheckBoxExample1({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
+    _initializeVideoPlayerFuture = _controller.initialize();
+    _controller.setLooping(true);
   }
-}
-@override
-State<CheckBoxExample1> createState() => _CheckBoxExample1State();
-class _CheckBoxExample1State extends State<CheckBoxExample1> {
-  bool _checkbox = false;
-  bool _checkboxListTile = false;
+  @override
+  void dispose() {
+    _controller.dispose();
+
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
-    return Column(
-        children: [
-        Row(
-        children: [
-        Checkbox(
-        focusColor: Colors.red,
-        autofocus: true,
-        checkColor: Colors.yellowAccent,
-        activeColor: Colors.black,
-        value: _checkbox,
-        onChanged: (value) {
-      setState(() {
-        _checkbox = !_checkbox;
-      });
-    },
-    ),
-    Text('I am true now'),
-    ],
-    ),
-    CheckboxListTile(
-//controlAffinity: ListTileControlAffinity.leading,
-    title: Text('I am true now'),
-    value: _checkboxListTile,
-    onChanged: (value) {
-    setState(() {
-    _checkboxListTile = !_checkboxListTile;
-    });
-    },
-    ),
-    Text("Selected items are $_checkboxListTile")
-    ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Butterfly Video'),
+      ),
+      body: FutureBuilder(
+        future: _initializeVideoPlayerFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return AspectRatio(
+              aspectRatio: _controller.value.aspectRatio,
+              child: VideoPlayer(_controller),
+            );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Wrap the play or pause in a call to `setState`. This ensures the
+          // correct icon is shown.
+          setState(() {
+            // If the video is playing, pause it.
+            if (_controller.value.isPlaying) {
+              _controller.pause();
+            } else {
+              // If the video is paused, play it.
+              _controller.play();
+            }
+          });
+        },
+        // Display the correct icon depending on the state of the player.
+        child: Icon(
+          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+        ),
+      ),
     );
   }
 }

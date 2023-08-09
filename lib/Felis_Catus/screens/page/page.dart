@@ -29,11 +29,13 @@ class _Page1State extends State<Page1> {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) => const DailerPage(),));
               // _launchUrl();
-            }, child: const Text("Dailer")),
+            },
+                child: const Text("Dailer")),
             TextButton(onPressed: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) => const SmsPage(),));
-            }, child: const Text("SMS")),
+            },
+                child: const Text("SMS")),
             TextButton(onPressed: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) => const EmailPage(),));

@@ -151,7 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: const Text("Already have an account? Click here")),
                     ],
                 ),
-    ),
+          ),
           ),
       ]
     ),

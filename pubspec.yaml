@@ -38,6 +38,8 @@ dependencies:
   provider:
   torch_light:
   url_launcher: ^6.1.11
+  video_player: ^2.7.0
+  audioplayers: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/audios/bestringtones.mp3
     - assets/images/logo.jpg
   #      - images/a_dot_ham.jpeg
 
