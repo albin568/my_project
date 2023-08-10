@@ -123,26 +123,7 @@ class MyApp extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/home/home_page.dart';
-import 'package:my_project/Felis_Catus/screens/settings/settings_page.dart';
-import 'package:my_project/Felis_Catus/screens/splash/splash_screen.dart';
-// import 'package:my_project/videoplayer/videoplayer1.dart';
-// import 'Felis_Catus/screens/page/page.dart';
-// import 'package:my_project/navigation_example_2/first_screen.dart';
-// import 'package:my_project/navigation_example_2/second_screen.dart';
-// import 'navigation_example_2/third_screen.dart';
-// import 'navigator_example/route1.dart';
-// import 'package:my_project/Felis_Catus/screens/register/register_page.dart';
-
-// import 'Felis_Catus/screens/splash/splash_screen.dart';
-// import 'package:my_project/switch_example.dart';
-// import 'package:my_project/m2_level_2/q1.dart';
-// import 'package:my_project/m2_level_2/q2.dart';
-
-// import 'm2_level_2/q3.dart';
-// import 'package:my_project/tooltip/tooltip_example.dart';
-
-// import 'm2_level_2/q1.dart';
+import 'package:my_project/splash_screen.dart';
 /*main(){
   // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
   //     statusBarColor: Colors.transparent
@@ -155,13 +136,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      *//*title: 'Named Routes Demo',
+      */
+/*title: 'Named Routes Demo',
       initialRoute: '/',
       routes: {
         '/':(context) => const FirstScreen(),
         '/second':(context) => const SecondScreen(),
         '/third' :(context) => const ThirdScreen(),
-      },*//*
+      },*/
+/*
       theme: ThemeData(
         // project theme
         // primarySwatch: Colors.blueGrey,
@@ -186,6 +169,23 @@ class MyApp extends StatelessWidget {
     );
   }
 }*/
+main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+      ),
+      home: const SplashScreen(),
+    );
+  }
+}
 /*
 main(){
   runApp(const MyApp());
@@ -199,24 +199,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const VideoPlayerScreen(),
+      // home: const SettingsPage(),
+      // home: const VideoPlayerScreen(),
+      home: const LogPage(),
     );
   }
 }*/
-main(){
-  runApp(const MyApp());
-}
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      // home: const SettingsPage(),
-      home: const HomePage(),
-    );
-  }
-}

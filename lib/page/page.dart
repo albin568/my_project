@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/Felis_Catus/screens/page/dialer.dart';
-import 'package:my_project/Felis_Catus/screens/page/email.dart';
-import 'package:my_project/Felis_Catus/screens/page/sms.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:my_project/page/dialer.dart';
+import 'package:my_project/page/email.dart';
+import 'package:my_project/page/sms.dart';
+
+// import 'package:url_launcher/url_launcher.dart';
 class Page1 extends StatefulWidget {
   const Page1({super.key});
 
